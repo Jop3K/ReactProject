@@ -22,5 +22,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "babel-eslint": "9.0.0",
+    "eslint": "5.12.0",
+    "eslint-config-google": "^0.12.0",
+    "eslint-plugin-react": "^7.12.4",
+    "standard": "^12.0.1"
+  },
+  "homepage": "."
 }
