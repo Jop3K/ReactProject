@@ -1,5 +1,6 @@
 # ReactProject
 metropolia react course
 
-Exercise 1:
+AJAX tehtava A tehty
+
 http://users.metropolia.fi/~jonihalo/build/
