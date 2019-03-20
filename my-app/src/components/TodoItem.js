@@ -50,7 +50,7 @@ class TodoItem extends Component {
       <div style={this.contentDiv()}>
 
 
-        <img style={this.smallPic()} src={this.props.todo.thumbnails.w160}  />
+        <img style={this.smallPic()} src={this.props.todo.thumbnails.w160} alt={'thumbnail'}  />
 
         <b style={this.titleStyle()}>{this.props.todo.title}</b>
 
