@@ -7,6 +7,7 @@ import Nav from './components/Nav';
 import Login from './views/Login';
 import Profile from './views/Profile';
 import Logout from './views/Logout';
+import {Grid} from '@material-ui/core';
 
 class App extends Component {
 
@@ -16,6 +17,7 @@ class App extends Component {
   };
 
   setUser = (user) => {
+    // hae profiilikuva ja liitä se user-objektiin
     this.setState({user});
   };
 
@@ -32,28 +34,33 @@ class App extends Component {
 
   render() {
     return (
-      <Router basename='/~jonihalo/mpjakk-react'>
-        <div className='container'>
-          <Nav checkLogin={this.checkLogin}/>
-          <Route  path="/home" render={(props) => (
-            <Front {...props} picArray={this.state.picArray}/>
-          )}/>
+        <Router basename='/~jonihalo/react-project'>
+          <Grid container>
+            <Grid item md={2} xs={12}>
+              <Nav checkLogin={this.checkLogin}/>
+            </Grid>
 
-          <Route path="/single/:id" component={Single}/>
+            <Grid item md={10} xs={12}>
+              <Route path="/home" render={(props) => (
+                  <Front {...props} picArray={this.state.picArray}/>
+              )}/>
 
-          <Route path="/profile" render={(props) => (
-            <Profile {...props} user={this.state.user}/>
-          )}/>
+              <Route path="/single/:id" component={Single}/>
 
-          <Route exact path="/" render={(props) => (
-            <Login {...props} setUser={this.setUser}/>
-          )}/>
+              <Route path="/profile" render={(props) => (
+                  <Profile {...props} user={this.state.user}/>
+              )}/>
 
-          <Route path="/logout" render={(props) => (
-            <Logout {...props} setUser={this.setUser}/>
-          )}/>
-        </div>
-      </Router>
+              <Route exact path="/" render={(props) => (
+                  <Login {...props} setUser={this.setUser}/>
+              )}/>
+
+              <Route path="/logout" render={(props) => (
+                  <Logout {...props} setUser={this.setUser}/>
+              )}/>
+            </Grid>
+          </Grid>
+        </Router>
     );
   }
 }
